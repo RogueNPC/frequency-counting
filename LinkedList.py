@@ -61,5 +61,5 @@ class LinkedList:
     current = self.head
     
     for i in range(self.length()):
-      print(current.data)
+      print(f'{current.data[0]}: {current.data[1]}')
       current = current.next
