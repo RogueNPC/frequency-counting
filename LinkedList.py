@@ -73,3 +73,11 @@ class LinkedList:
       current = current.next
       
     return counter
+
+  def exact_count(self, index):
+    
+    current = self.head
+
+    for i in range(index):
+      current = current.next
+    return current.data[1]

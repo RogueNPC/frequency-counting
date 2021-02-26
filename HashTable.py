@@ -61,3 +61,13 @@ class HashTable:
       num_distinct_words = self.arr[key_hash].distinct_words()
       counter += num_distinct_words
     return counter
+
+
+  def find_exact(self, key):
+    key_hash = self.hash_func(key)
+    ll = self.arr[key_hash]
+    index_in_linkedlist = ll.find(key)
+    if index_in_linkedlist == -1:
+      return -1
+    else:
+      return ll.exact_count(index_in_linkedlist)

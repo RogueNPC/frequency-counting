@@ -68,6 +68,22 @@ print(f"🖨  All done! We found {frequency_counter.count_distinct_words()} dist
 
 frequency_counter.print_key_values()
 
+cont = True
+while cont == True:
+  user_input = input("📝  Would you like to find the exact count of a particular word in the file (Y or N)? ")
+
+  if user_input.lower() == 'y':
+    word = input("📝  What word would you like to find the exact count of? ")
+    exact_count = frequency_counter.find_exact(word)
+    if exact_count == -1:
+      print(f"The word named {word} does not exist in this txt file.")
+    else:
+      print(f"The word named {word} appears exactly {exact_count} times in this txt file.")
+  elif user_input.lower() == 'n':
+    cont = False
+    print("Goodbye!")
+  else:
+    print("Please enter a valid response. Try again.")
 
 
 # THIS IS TO ONLY BE USED FOR TESTING. THIS IS NOT A SOLUTION.
