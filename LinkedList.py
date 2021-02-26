@@ -21,7 +21,7 @@ class LinkedList:
 
     while current != None and not found:
 
-      if current.data == item:
+      if current.data[0] == item:
         found = True
       else:
         current = current.next
@@ -32,6 +32,17 @@ class LinkedList:
     else:
       return -1
 
+  # custom method to increment node value by 1 when inserting identical key
+  def modify(self,index):
+
+    current = self.head
+
+    for i in range(index):
+      current = current.next
+    data = list(current.data)
+    data[1] += 1
+    current.data = tuple(data)
+    return -1
 
 
   def length(self):
