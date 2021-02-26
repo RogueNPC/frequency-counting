@@ -51,10 +51,7 @@ class HashTable:
       ll.modify(index_in_linkedlist)
 
 
-
-  # 4️⃣ TODO: Complete the print_key_values method.
-
-  # Traverse through the every Linked List in the table and print the key value pairs.
+  # Traverses through every Linked List in the table and print the key value pairs.
 
   # For example: 
   # a: 1
@@ -64,7 +61,8 @@ class HashTable:
   # erase: 2
 
   def print_key_values(self):
-    pass
+    for key_hash in range(self.size): 
+      self.arr[key_hash].print_nodes()
 
 
 
