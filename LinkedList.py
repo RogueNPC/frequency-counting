@@ -63,3 +63,13 @@ class LinkedList:
     for i in range(self.length()):
       print(f'{current.data[0]}: {current.data[1]}')
       current = current.next
+
+  def distinct_words(self):
+    current = self.head
+    counter = 0
+    
+    for i in range(self.length()):
+      counter += 1
+      current = current.next
+      
+    return counter

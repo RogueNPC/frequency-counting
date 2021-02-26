@@ -63,7 +63,7 @@ for word in words_in_file:
   frequency_counter.insert(word, 1)
 
 
-print(f"🖨  All done! Here are all of the words from {filename} and their frequencies:\n")
+print(f"🖨  All done! We found {frequency_counter.count_distinct_words()} distict words! Here are all of the words from {filename} and their frequencies:\n")
 
 
 frequency_counter.print_key_values()

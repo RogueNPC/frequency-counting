@@ -8,7 +8,6 @@ class HashTable:
 
   # Each element of the hash table (arr) is a linked list.
   # This method creates an array (list) of a given size and populates each of its elements with a LinkedList object.
-
   def create_arr(self, size):
      
     temp = []
@@ -18,7 +17,6 @@ class HashTable:
 
 
   # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored. 
-
   def hash_func(self, key):
     
     key_length = len(key)
@@ -30,7 +28,6 @@ class HashTable:
 
   # Inserts a key value pair into the hash table, where the key is the word and the value is a counter for the number of times the word appeared.
   # When inserting a new word in the hash table, be sure to check if there is a Node with the same key in the table already.
-
   def insert(self, key, value):
 
     # First find the index where it should be placed
@@ -52,17 +49,15 @@ class HashTable:
 
 
   # Traverses through every Linked List in the table and print the key value pairs.
-
-  # For example: 
-  # a: 1
-  # again: 1
-  # and: 1
-  # blooms: 1
-  # erase: 2
-
   def print_key_values(self):
     for key_hash in range(self.size): 
       self.arr[key_hash].print_nodes()
 
 
-
+  # Returns the total number of distinct words
+  def count_distinct_words(self):
+    counter = 0
+    for key_hash in range(self.size):
+      num_distinct_words = self.arr[key_hash].distinct_words()
+      counter += num_distinct_words
+    return counter
